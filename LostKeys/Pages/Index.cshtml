@@ -4,21 +4,15 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">LostKeys</h1>
+    <h1 class="display-1"><a href="/" style="color: white; text-decoration: none;">LostKeys</a></h1>
     @if (Model.PhoneNumber is null)
     {
-        <p>
-            Help keys get back to their owners.
-            <br />
-            Developed by <a href="https://tomoddy.com" target="_blank">Tom Oddy</a>
-        </p>
+        <h4>Help keys get back to their owners.</h4>
+        <h6>Developed by <a href="https://tomoddy.com" target="_blank">Tom Oddy</a></h6>
     }
     else
     {
-        <p>
-            Help these keys get home!
-            <br />
-            <a href="tel:+@Model.PhoneNumber">@String.Format("+{0:## ('0') #### ######}", Convert.ToInt64(Model.PhoneNumber))</a>
-        </p>
+        <h4>Call: <a href="tel:+@Model.PhoneNumber">@String.Format("+{0:## ('0') #### ######}", Convert.ToInt64(Model.PhoneNumber))</a></h4>
+        <h5>Help these keys get home!</h5>
     }
 </div>
