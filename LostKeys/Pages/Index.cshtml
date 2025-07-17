@@ -1,14 +1,24 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
     <h1 class="display-4">LostKeys</h1>
-    <p>
-        Help keys get back to their owners.
-        <br />
-        Developed by <a href="https://tomoddy.com" target="_blank">Tom Oddy</a>
-    </p>
+    @if (Model.PhoneNumber is null)
+    {
+        <p>
+            Help keys get back to their owners.
+            <br />
+            Developed by <a href="https://tomoddy.com" target="_blank">Tom Oddy</a>
+        </p>
+    }
+    else
+    {
+        <p>
+            Help these keys get home!
+            <br />
+            <a href="tel:@Model.PhoneNumber">@String.Format("+{0:## ('0') #### ######}", Convert.ToInt64(Model.PhoneNumber))</a>
+        </p>
+    }
 </div>

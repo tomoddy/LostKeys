@@ -4,16 +4,13 @@ namespace LostKeys.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        public string? PhoneNumber { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel() { }
+
+        public void OnGet(string? number)
         {
-            _logger = logger;
-        }
-
-        public void OnGet()
-        {
-
+            PhoneNumber = number;
         }
     }
 }
