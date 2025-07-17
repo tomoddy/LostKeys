@@ -18,7 +18,7 @@
         <p>
             Help these keys get home!
             <br />
-            <a href="tel:@Model.PhoneNumber">@String.Format("+{0:## ('0') #### ######}", Convert.ToInt64(Model.PhoneNumber))</a>
+            <a href="tel:+@Model.PhoneNumber">@String.Format("+{0:## ('0') #### ######}", Convert.ToInt64(Model.PhoneNumber))</a>
         </p>
     }
 </div>
